@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -7,42 +7,68 @@
 
 @layer base {
   :root {
-    --background: 210 40% 98%;
-    --foreground: 222.2 84% 4.9%;
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 0 0% 3.9%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 0 0% 3.9%;
 
-    /* Primary color (60%) */
-    --primary: 215 60% 45%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary color - Azul da logo (60%) */
+    --primary: 194 70% 28%;
+    --primary-foreground: 0 0% 98%;
 
-    /* Secondary color (30%) */
-    --secondary: 200 30% 80%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary color - Azul mais claro (30%) */
+    --secondary: 194 40% 85%;
+    --secondary-foreground: 194 70% 28%;
 
-    /* Accent color (10%) */
-    --accent: 25 100% 55%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Accent color - Amarelo dourado da logo (10%) */
+    --accent: 38 100% 60%;
+    --accent-foreground: 0 0% 3.9%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 194 70% 28%;
 
     --radius: 0.75rem;
   }
 
   .dark {
-    /* ... keep existing code (dark mode variables) */
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 194 70% 28%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 194 40% 85%;
+    --secondary-foreground: 194 70% 28%;
+
+    --accent: 38 100% 60%;
+    --accent-foreground: 0 0% 3.9%;
+
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 194 70% 28%;
   }
 }
 
@@ -63,48 +89,50 @@
 
 @layer components {
   .hero-gradient {
-    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.4));
-    backdrop-filter: blur(8px);
+    background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--secondary)) 100%);
   }
 
   .glass-card {
-    @apply bg-white/80 backdrop-blur-md border border-white/20 shadow-md;
+    @apply bg-white/90 backdrop-blur-sm border border-white/20 shadow-lg;
   }
 
-  /* Reduced vertical spacing */
   .section-container {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16;
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20;
   }
 
   .section-title {
-    @apply text-3xl sm:text-4xl font-bold text-center mb-3 relative;
+    @apply text-3xl sm:text-4xl font-bold text-center mb-4 relative;
   }
 
   .section-title::after {
     content: "";
-    @apply absolute w-20 h-1 bg-primary left-1/2 -translate-x-1/2 bottom-0 mt-4;
+    @apply absolute w-20 h-1 bg-accent left-1/2 -translate-x-1/2 bottom-0 mt-4;
     bottom: -0.75rem;
   }
 
   .section-subtitle {
-    @apply text-lg text-gray-600 text-center max-w-3xl mx-auto mb-8;
+    @apply text-lg text-gray-600 text-center max-w-3xl mx-auto mb-12;
   }
 
   .btn-primary {
-    @apply px-6 py-3 bg-primary text-white rounded-md font-medium transition-all duration-200 hover:bg-primary/90 hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:ring-offset-2;
+    @apply px-8 py-3 bg-primary text-white rounded-lg font-medium transition-all duration-300 hover:bg-primary/90 hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:ring-offset-2;
   }
 
   .btn-secondary {
-    @apply px-6 py-3 bg-white text-primary rounded-md font-medium transition-all duration-200 hover:bg-gray-50 border border-gray-200 shadow-sm hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:ring-offset-2;
+    @apply px-8 py-3 bg-white text-primary rounded-lg font-medium transition-all duration-300 hover:bg-gray-50 border-2 border-primary shadow-sm hover:shadow-md hover:-translate-y-0.5 active:translate-y-0 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:ring-offset-2;
   }
 
   .btn-accent {
-    @apply px-6 py-3 bg-accent text-white rounded-md font-medium transition-all duration-200 hover:bg-accent/90 hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 focus:outline-none focus:ring-2 focus:ring-accent/50 focus:ring-offset-2;
+    @apply px-8 py-3 bg-accent text-primary rounded-lg font-medium transition-all duration-300 hover:bg-accent/90 hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 focus:outline-none focus:ring-2 focus:ring-accent/50 focus:ring-offset-2;
+  }
+
+  .whatsapp-float {
+    @apply fixed bottom-6 right-6 z-50 w-16 h-16 bg-green-500 text-white rounded-full shadow-lg hover:bg-green-600 transition-all duration-300 hover:scale-110;
   }
 
   .animate-when-visible {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(30px);
     transition: opacity 0.6s ease-out, transform 0.6s ease-out;
   }
 

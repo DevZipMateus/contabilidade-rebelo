@@ -1,0 +1,30 @@
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://contabilidaderebelo.com.br/sitemap.xml
+
+# Disallow admin areas
+Disallow: /admin/
+Disallow: /login/
+Disallow: /api/
+Disallow: /*.json$
+Disallow: /*.xml$
+Disallow: /src/
+Disallow: /node_modules/
+
+# Allow important files
+Allow: /sitemap.xml
+Allow: /robots.txt
+Allow: /*.css$
+Allow: /*.js$
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.gif$
+Allow: /*.svg$
+Allow: /*.webp$
+
+# Crawl delay
+Crawl-delay: 1

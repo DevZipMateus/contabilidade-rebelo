@@ -1,53 +1,54 @@
 
-import { Calculator, BarChart3, FileText, Users, PieChart, Building } from 'lucide-react';
+import { FileText, Calculator, TrendingUp, Building, Users, Shield } from 'lucide-react';
 import ServiceCard from './ServiceCard';
 import AnimatedSection from './AnimatedSection';
 
 const ServicesSection = () => {
   const services = [
     {
-      icon: Calculator,
-      title: 'Contabilidade',
-      description: 'Serviços completos de contabilidade para empresas de todos os portes, com demonstrativos claros e precisos.'
-    },
-    {
-      icon: BarChart3,
-      title: 'Fiscal',
-      description: 'Gerenciamento de obrigações fiscais, apuração de impostos e planejamento tributário para otimizar a carga fiscal.'
-    },
-    {
       icon: FileText,
-      title: 'Departamento Pessoal',
-      description: 'Gestão completa da folha de pagamento, admissões, demissões e todas as rotinas trabalhistas.'
+      title: 'Serviços Fiscais',
+      description: 'Gestão completa de obrigações fiscais, apuração de impostos e planejamento tributário para otimizar sua carga fiscal e garantir conformidade.'
+    },
+    {
+      icon: Calculator,
+      title: 'Serviços Contábeis',
+      description: 'Contabilidade completa para empresas de todos os portes, com demonstrativos claros, balancetes e relatórios gerenciais precisos.'
+    },
+    {
+      icon: TrendingUp,
+      title: 'Assessoria Financeira',
+      description: 'Consultoria financeira especializada para auxiliar na gestão empresarial, análise de investimentos e tomada de decisões estratégicas.'
     },
     {
       icon: Building,
-      title: 'Abertura de Empresa',
-      description: 'Auxílio completo na abertura, alteração ou encerramento de empresas, com agilidade e segurança.'
-    },
-    {
-      icon: PieChart,
-      title: 'Consultoria Empresarial',
-      description: 'Análise financeira, planejamento estratégico e apoio na tomada de decisões para o crescimento do seu negócio.'
+      title: 'Abertura de Empresas',
+      description: 'Auxílio completo na abertura, alteração e encerramento de empresas, com agilidade e total conformidade legal.'
     },
     {
       icon: Users,
-      title: 'Societário',
-      description: 'Elaboração e alteração de contratos sociais, atas e documentos societários conforme a legislação vigente.'
+      title: 'Departamento Pessoal',
+      description: 'Gestão completa da folha de pagamento, admissões, rescisões e todas as rotinas trabalhistas e previdenciárias.'
+    },
+    {
+      icon: Shield,
+      title: 'Planejamento Tributário',
+      description: 'Estratégias tributárias personalizadas para reduzir legalmente a carga fiscal e maximizar a eficiência tributária da empresa.'
     }
   ];
 
   return (
-    <section id="serviços" className="py-24 bg-gradient-to-b from-blue-50 to-white">
+    <section id="servicos" className="py-20 bg-white">
       <div className="section-container">
         <AnimatedSection>
           <h2 className="section-title">Nossos Serviços</h2>
           <p className="section-subtitle">
-            Oferecemos soluções completas para atender todas as necessidades da sua empresa
+            Oferecemos soluções completas em contabilidade, fiscal e assessoria financeira 
+            para atender todas as necessidades da sua empresa
           </p>
         </AnimatedSection>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
           {services.map((service, index) => (
             <AnimatedSection 
               key={service.title} 
@@ -64,9 +65,21 @@ const ServicesSection = () => {
         </div>
 
         <AnimatedSection className="text-center mt-16">
-          <a href="#contato" className="btn-primary inline-block">
-            Solicite um orçamento
-          </a>
+          <div className="bg-gradient-to-r from-primary to-secondary p-8 rounded-2xl text-white">
+            <h3 className="text-2xl font-bold mb-4">
+              Precisa de ajuda com suas obrigações contábeis?
+            </h3>
+            <p className="text-lg mb-6 opacity-90">
+              Entre em contato conosco e descubra como podemos ajudar seu negócio a crescer 
+              com segurança e eficiência tributária.
+            </p>
+            <a 
+              href="#contato" 
+              className="btn-accent inline-block"
+            >
+              Solicite um orçamento gratuito
+            </a>
+          </div>
         </AnimatedSection>
       </div>
     </section>
